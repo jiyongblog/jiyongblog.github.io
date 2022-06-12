@@ -107,6 +107,195 @@
     
     
     <article
+  id="post-GitHub博客搭建（四）"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/06/12/GitHub%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%EF%BC%88%E5%9B%9B%EF%BC%89/"
+    >GitHub博客搭建（四）</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/06/12/GitHub%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%EF%BC%88%E5%9B%9B%EF%BC%89/" class="article-date">
+  <time datetime="2022-06-12T08:07:00.000Z" itemprop="datePublished">2022-06-12</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+   
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
+  id="post-GitHub博客搭建（三）"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/06/12/GitHub%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%EF%BC%88%E4%B8%89%EF%BC%89/"
+    >GitHub博客搭建（三）</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/06/12/GitHub%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%EF%BC%88%E4%B8%89%EF%BC%89/" class="article-date">
+  <time datetime="2022-06-12T07:36:00.000Z" itemprop="datePublished">2022-06-12</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="Hexo安装及配置"><a href="#Hexo安装及配置" class="headerlink" title="Hexo安装及配置"></a>Hexo安装及配置</h2><h5 id="1-Hexo安装"><a href="#1-Hexo安装" class="headerlink" title="1.Hexo安装"></a>1.Hexo安装</h5><p>选择你的博客放置在哪个盘的哪个文件夹，在空白处单击鼠标右键，依然选择Git Bash here来打开Git命令行，并输入如下命令。<br><img src="/images/img/GithubBlog3/1.png" width="100%"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-Hexo本地部署"><a href="#2-Hexo本地部署" class="headerlink" title="2.Hexo本地部署"></a>2.Hexo本地部署</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ <span class="built_in">cd</span> &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<p>其中，<folder>是你要保存博客内容的文件夹的名字。我的文件夹的名字是JYblog，所以上面三个命令就是：</folder></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init JYblog</span><br><span class="line">$ <span class="built_in">cd</span> JYblog</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<h5 id="3-启动"><a href="#3-启动" class="headerlink" title="3.启动"></a>3.启动</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">$ hexo deploy </span><br><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>系统会出现如下提示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
+<p>这时在浏览器地址栏输入<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> 就可以看到默认博客界面。</p>
+<h5 id="4-将hexo部署到GitHub"><a href="#4-将hexo部署到GitHub" class="headerlink" title="4.将hexo部署到GitHub"></a>4.将hexo部署到GitHub</h5><h6 id="4-1安装hexo-deployer-git"><a href="#4-1安装hexo-deployer-git" class="headerlink" title="4.1安装hexo-deployer-git"></a>4.1安装hexo-deployer-git</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<h6 id="4-2修改根目录下的-config-yml，配置-GitHub-相关信息"><a href="#4-2修改根目录下的-config-yml，配置-GitHub-相关信息" class="headerlink" title="4.2修改根目录下的 _config.yml，配置 GitHub 相关信息"></a>4.2修改根目录下的 _config.yml，配置 GitHub 相关信息</h6><p>找到其中的deploy标签，修改成如图形式。注意将repo的用户名替换为自己的用户名<br><img src="/images/img/GithubBlog3/2.png" width="100%"></p>
+<h6 id="打开-Git-Bash进入创建的JYblog文件夹，依次输入以下命令："><a href="#打开-Git-Bash进入创建的JYblog文件夹，依次输入以下命令：" class="headerlink" title="打开 Git Bash进入创建的JYblog文件夹，依次输入以下命令："></a>打开 Git Bash进入创建的JYblog文件夹，依次输入以下命令：</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo generate</span><br><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>浏览器访问 <a target="_blank" rel="noopener" href="https://jiyongblog.github.io/">https://jiyongblog.github.io/</a> 部署成功</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
+  id="post-GitHub博客搭建（二）"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/06/12/GitHub%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%EF%BC%88%E4%BA%8C%EF%BC%89/"
+    >GitHub博客搭建（二）</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/06/12/GitHub%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%EF%BC%88%E4%BA%8C%EF%BC%89/" class="article-date">
+  <time datetime="2022-06-12T06:57:00.000Z" itemprop="datePublished">2022-06-12</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="创建仓库以及SSH配置"><a href="#创建仓库以及SSH配置" class="headerlink" title="创建仓库以及SSH配置"></a>创建仓库以及SSH配置</h2><h5 id="1-登录Github，点击Your-repositories，进入仓库页面"><a href="#1-登录Github，点击Your-repositories，进入仓库页面" class="headerlink" title="1.登录Github，点击Your repositories，进入仓库页面"></a>1.登录<a target="_blank" rel="noopener" href="https://github.com/">Github</a>，点击Your repositories，进入仓库页面</h5>  <img src="/images/img/GithubBlog2/1.png" width="50%">
+  
+<h5 id="2-点击New按钮，进入仓库创建页面。"><a href="#2-点击New按钮，进入仓库创建页面。" class="headerlink" title="2.点击New按钮，进入仓库创建页面。"></a>2.点击New按钮，进入仓库创建页面。</h5>  <img src="/images/img/GithubBlog2/2.png" width="100%">
+ 
+<h5 id="3-填写仓库名，格式必须为-lt-用户名-gt-github-io，然后点击Create-repository。"><a href="#3-填写仓库名，格式必须为-lt-用户名-gt-github-io，然后点击Create-repository。" class="headerlink" title="3.填写仓库名，格式必须为&lt;用户名&gt;.github.io，然后点击Create repository。"></a>3.填写仓库名，格式必须为&lt;用户名&gt;.github.io，然后点击Create repository。</h5> <img src="/images/img/GithubBlog2/3.png" width="100%">
+ 
+<h5 id="4-使用SSH将本地git与远程的GitHub建立联系"><a href="#4-使用SSH将本地git与远程的GitHub建立联系" class="headerlink" title="4.使用SSH将本地git与远程的GitHub建立联系"></a>4.使用SSH将本地git与远程的GitHub建立联系</h5><h6 id="4-1鼠标右键，打开Git-Bush，依次输入："><a href="#4-1鼠标右键，打开Git-Bush，依次输入：" class="headerlink" title="4.1鼠标右键，打开Git Bush，依次输入："></a>4.1鼠标右键，打开Git Bush，依次输入：</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">&quot;Your Username&quot;</span></span><br><span class="line">$ git config --global user.email <span class="string">&quot;Your Email Address&quot;</span></span><br></pre></td></tr></table></figure>
+<p>Your Username和Your Email Address就是注册GitHub账号时的用户名和邮箱。因为使用仓库前，要通过Username和Email标明自己的身份。</p>
+<h6 id="4-2继续使用Git-Bush，依次输入如下两条命令："><a href="#4-2继续使用Git-Bush，依次输入如下两条命令：" class="headerlink" title="4.2继续使用Git Bush，依次输入如下两条命令："></a>4.2继续使用Git Bush，依次输入如下两条命令：</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.ssh</span><br><span class="line">$ ssh-keygen -t rsa -C <span class="string">&quot;Your Email Address&quot;</span></span><br></pre></td></tr></table></figure>
+<p><font color="#dd0000">注意：</font>在输入cd ~&#x2F;.ssh时，如果提示：No such file or directory， 说明你是第一次使用Git，没有影响。</p>
+<p>提示：cd ~&#x2F;.ssh用来检查本机的ssh密钥，ssh-keygen -t rsa -C “Your Email Address用于生成新的SSH Key。</p>
+<p>在出现如下提示后，直接回车</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/Users/your_user_directory/.ssh/id_rsa):【这里直接回车】</span><br></pre></td></tr></table></figure>
+<p>会提示输入密码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):【输入加密串】【加密串我们看不见，所以你输密码的时候不要以为没输入进去，你直接输入就好，输完密码按回车键确定就行】</span><br><span class="line">Enter same passphrase again:【再次输入加密串】</span><br></pre></td></tr></table></figure>
+<p><font color="#dd0000">注意：</font>这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入。<br><font color="#dd0000">个人建议不输入密码</font></p>
+<p>key生成成功后，可以看到Your public key has been saved in &#x2F;C:&#x2F;Users&#x2F;john&#x2F;.ssh&#x2F;id_rsa.pub. 找到ssh key保存的位置。</p>
+<h5 id="5-添加-SSH-Key-到-GitHub"><a href="#5-添加-SSH-Key-到-GitHub" class="headerlink" title="5.添加 SSH Key 到 GitHub"></a>5.添加 SSH Key 到 GitHub</h5><h6 id="5-1-登录Github。依次点击右上角的头像-gt-Settings-gt-SSH-and-GPG-keys-gt-New-SSH-key"><a href="#5-1-登录Github。依次点击右上角的头像-gt-Settings-gt-SSH-and-GPG-keys-gt-New-SSH-key" class="headerlink" title="5.1 登录Github。依次点击右上角的头像-&gt;Settings-&gt;SSH and GPG keys-&gt;New SSH key"></a>5.1 登录<a target="_blank" rel="noopener" href="https://github.com/">Github</a>。依次点击右上角的头像-&gt;Settings-&gt;SSH and GPG keys-&gt;New SSH key</h6> <img src="/images/img/GithubBlog2/4.png" width="100%">
+ 
+<h6 id="5-2打开本地SSH-Key并复制到github"><a href="#5-2打开本地SSH-Key并复制到github" class="headerlink" title="5.2打开本地SSH Key并复制到github"></a>5.2打开本地SSH Key并复制到github</h6><p>使用Notepad++打开本地C:&#x2F;Users&#x2F;john&#x2F;.ssh&#x2F;id_rsa.pub文件，也就是刚才生成的SSH key。如果看不到这个文件，需要设置显示隐藏的文件。<br><img src="/images/img/GithubBlog2/5.png" width="100%"><br>将本地文件里的SSH key全选复制粘贴到刚刚GitHub上通过New SSH key创建的key方框里，Title随便写或者直接空着不写也可以，直接点击Add SHH key就好了。</p>
+<h6 id="5-3打开Git-Bash，输入ssh-T-x67-105-116-x40-103-x69-x74-x68-x75-98-x2e-99-x6f-x6d-，测试是否添加成功"><a href="#5-3打开Git-Bash，输入ssh-T-x67-105-116-x40-103-x69-x74-x68-x75-98-x2e-99-x6f-x6d-，测试是否添加成功" class="headerlink" title="5.3打开Git Bash，输入ssh -T &#x67;&#105;&#116;&#x40;&#103;&#x69;&#x74;&#x68;&#x75;&#98;&#x2e;&#99;&#x6f;&#x6d;，测试是否添加成功"></a>5.3打开Git Bash，输入ssh -T <a href="mailto:&#x67;&#105;&#116;&#x40;&#103;&#x69;&#x74;&#x68;&#x75;&#98;&#x2e;&#99;&#x6f;&#x6d;">&#x67;&#105;&#116;&#x40;&#103;&#x69;&#x74;&#x68;&#x75;&#98;&#x2e;&#99;&#x6f;&#x6d;</a>，测试是否添加成功</h6><p>出现如下提示，输入yes即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host <span class="string">&#x27;github.com (192.30.255.113)&#x27;</span> can<span class="string">&#x27;t be established.</span></span><br><span class="line"><span class="string">RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.</span></span><br><span class="line"><span class="string">Are you sure you want to continue connecting (yes/no)?</span></span><br></pre></td></tr></table></figure>
+<p>输入yes后会提示输入密码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Enter passphrase <span class="keyword">for</span> key <span class="string">&#x27;/c/Users/User/.ssh/id_rsa&#x27;</span>:【这里的密码也是加密串】</span><br></pre></td></tr></table></figure>
+<p>当系统出现如下提示时，说明成功了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi HandsomeSuperRed! You<span class="string">&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span></span><br></pre></td></tr></table></figure> 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
   id="post-常用语法"
   class="article article-type-post"
   itemscope
