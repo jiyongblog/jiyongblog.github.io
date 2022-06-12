@@ -31,6 +31,21 @@
   <entry>
     <title>GitHub博客搭建（一）</title>
     <url>/2022/06/12/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%EF%BC%88%E4%B8%80%EF%BC%89/</url>
-    <content><![CDATA[<h2 id="博客搭建"><a href="#博客搭建" class="headerlink" title="博客搭建"></a>博客搭建</h2>]]></content>
+    <content><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h5 id="1-GitHub账号注册"><a href="#1-GitHub账号注册" class="headerlink" title="1.GitHub账号注册"></a>1.GitHub账号注册</h5><p> <a href="https://github.com/">官网注册</a></p>
+<h5 id="2-Git安装"><a href="#2-Git安装" class="headerlink" title="2.Git安装"></a>2.Git安装</h5><p> <a href="https://git-scm.com/downloads">官网下载Git</a><br> 双击Git-2.32.0.2-64-bit.exe安装包，一路点击next即可，安装完成后鼠标右键会有Git Bash Here字样。</p>
+<p> 输入以下命令，目的是将本地的Git与github链接起来。命令中引号内容自行替换</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;github用户名&quot;</span></span><br><span class="line">git config --global user.emai <span class="string">&quot;github邮箱&quot;</span></span><br></pre></td></tr></table></figure>
+<h5 id="2-NodeJS安装"><a href="#2-NodeJS安装" class="headerlink" title="2.NodeJS安装"></a>2.NodeJS安装</h5><p> <a href="https://nodejs.org/zh-cn/download/">官网下载NodeJS</a></p>
+<p> <img src="/images/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%EF%BC%88%E4%B8%80%EF%BC%89/404.jpg" alt="111"></p>
+<p> <img src="/images/404.jpg" alt="111"></p>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>111</title>
+    <url>/2022/06/12/111/</url>
+    <content><![CDATA[]]></content>
   </entry>
 </search>
