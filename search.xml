@@ -25,28 +25,42 @@
   <entry>
     <title>GitHub博客搭建（四）</title>
     <url>/2022/06/12/GitHub%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%EF%BC%88%E5%9B%9B%EF%BC%89/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h2 id="Hexo-Admin插件以及Hexo主题安装"><a href="#Hexo-Admin插件以及Hexo主题安装" class="headerlink" title="Hexo Admin插件以及Hexo主题安装"></a>Hexo Admin插件以及Hexo主题安装</h2><h5 id="1-Hexo-Admin安装"><a href="#1-Hexo-Admin安装" class="headerlink" title="1.Hexo Admin安装"></a>1.Hexo Admin安装</h5><p>在你的hexo根目录下，打开git bash here输入以下代码进行安装<br><img src="/images/img/GithubBlog4/1.png" width="100%"></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install --save hexo-admin</span><br></pre></td></tr></table></figure>
+<p>浏览器输入网址:localhost:4000&#x2F;admin 查是否安装成功<br><img src="/images/img/GithubBlog4/4.png" width="100%"></p>
+<h5 id="2-Hexo主题安装"><a href="#2-Hexo主题安装" class="headerlink" title="2.Hexo主题安装"></a>2.Hexo主题安装</h5><h6 id="2-1主题选择"><a href="#2-1主题选择" class="headerlink" title="2.1主题选择"></a>2.1主题选择</h6><p>GitHub上的Hexo主题： <a href="https://github.com/hexojs/hexo/wiki/Themes">https://github.com/hexojs/hexo/wiki/Themes</a></p>
+<p>Hexo官网主题：<a href="https://hexo.io/themes/">https://hexo.io/themes/</a></p>
+<p>知乎上的主题推荐：<a href="https://www.zhihu.com/question/24422335">https://www.zhihu.com/question/24422335</a></p>
+<h6 id="2-2主题安装"><a href="#2-2主题安装" class="headerlink" title="2.2主题安装"></a>2.2主题安装</h6><p>每一种主题，一般应该都会有相关的使用说明，包括安装、个性化设置，这里以fexo为例介绍安装过程。<br>在你的hexo根目录下，打开git bash here输入以下代码进行安装</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> git@github.com:forsigner/fexo.git themes/fexo</span><br></pre></td></tr></table></figure>
+<p>如果设置了密码，系统会提示输入密码，如果没有设置密码，将直接下载。</p>
+<h6 id="2-3主题部署"><a href="#2-3主题部署" class="headerlink" title="2.3主题部署"></a>2.3主题部署</h6><p>使用Notepad++打开网站根目录的_config.yml  修改theme: fexo。<br><img src="/images/img/GithubBlog4/2.png" width="100%"><br><img src="/images/img/GithubBlog4/3.png" width="100%"></p>
+<h6 id="2-4主题验证测试"><a href="#2-4主题验证测试" class="headerlink" title="2.4主题验证测试"></a>2.4主题验证测试</h6><p>输入以下命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br><span class="line">hexo server </span><br></pre></td></tr></table></figure>
+<p>浏览器输入 <a href="http://localhost:4000/">http://localhost:4000/</a> 看看自己的主题是否已经应用。</p>
+]]></content>
       <categories>
         <category>博客搭建</category>
       </categories>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/06/11/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <title>GitHub博客搭建（一）</title>
+    <url>/2022/06/12/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    <content><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h5 id="1-GitHub账号注册"><a href="#1-GitHub账号注册" class="headerlink" title="1.GitHub账号注册"></a>1.GitHub账号注册</h5><p> <a href="https://github.com/">官网注册</a></p>
+<h5 id="2-Git安装"><a href="#2-Git安装" class="headerlink" title="2.Git安装"></a>2.Git安装</h5><p> <a href="https://git-scm.com/downloads">官网下载Git</a><br> 双击Git-2.32.0.2-64-bit.exe安装包，一路点击next即可，安装完成后鼠标右键会有Git Bash Here字样。</p>
+<h5 id="3-NodeJS安装"><a href="#3-NodeJS安装" class="headerlink" title="3.NodeJS安装"></a>3.NodeJS安装</h5><p> <a href="https://nodejs.org/zh-cn/download/">官网下载NodeJS</a>，双击安装包开始安装，一路点击Next即可。<br> <img src="/images/img/GithubBlog1/1.png"></p>
+<p> 打开cmd窗口，查看node和npm版本，下图表示正常安装完成。<br> <img src="/images/img/GithubBlog1/2.png" width="80%"></p>
+<h6 id="修改NodeJS的全局包路径"><a href="#修改NodeJS的全局包路径" class="headerlink" title="修改NodeJS的全局包路径"></a>修改NodeJS的全局包路径</h6><p> 下载全局包时，默认保存在C盘下，可通过 npm root -g 命令查看当前路径，为避免占用C盘空间，将全局包放到其他目录下。<br> 1.在安装目录下创建两个文件夹，node_global 全局包存放，node_cache node缓存<br> <img src="/images/img/GithubBlog1/3.png" width="100%"><br>打开cmd，执行如下命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> prefix <span class="string">&quot;E:\Blog\NodeJS\node_global&quot;</span></span><br><span class="line">npm config <span class="built_in">set</span> cache <span class="string">&quot;E:\Blog\NodeJS\node_cache&quot;</span></span><br></pre></td></tr></table></figure>
+<p>2.修改环境变量<br>将【node_global】的路径“E:\devTools\nodejs\node_global”加入到【系统变量 】下的【PATH】 变量中<br> <img src="/images/img/GithubBlog1/4.png" width="65%"><br>3.测试全局路径是否修改成功<br>输入下面的命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install express -g</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install express --global</span><br></pre></td></tr></table></figure>
+<p><font color="#dd0000">注意：</font>“-g”等同于“–global”，“-g” 是全局安装，不加“-g”就是默认下载到当前目录。“-g” 表示安装到之前设置的【node_global】目录下，同时nodejs会自动地在node_global文件夹下创建【node_modules】子文件夹， 即自动下载到“E:\Blog\NodeJS\node_global\node_modules” 路径下。<br><img src="/images/img/GithubBlog1/5.png" width="100%"><br>4.第三步失败的话可以参考下方进行设置。<br><font color="#dd0000">注意：</font>需要将安装文件夹的权限设置为完全控制。<br><img src="/images/img/GithubBlog1/6.png" width="65%"><br>包括安装文件夹下的【node_cache】、【node_global】、【node_modules】这三个文件夹。<br><img src="/images/img/GithubBlog1/7.png" width="100%"></p>
 ]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
   </entry>
   <entry>
     <title>常用语法</title>
@@ -81,7 +95,7 @@
 <h5 id="5-添加-SSH-Key-到-GitHub"><a href="#5-添加-SSH-Key-到-GitHub" class="headerlink" title="5.添加 SSH Key 到 GitHub"></a>5.添加 SSH Key 到 GitHub</h5><h6 id="5-1-登录Github。依次点击右上角的头像-gt-Settings-gt-SSH-and-GPG-keys-gt-New-SSH-key"><a href="#5-1-登录Github。依次点击右上角的头像-gt-Settings-gt-SSH-and-GPG-keys-gt-New-SSH-key" class="headerlink" title="5.1 登录Github。依次点击右上角的头像-&gt;Settings-&gt;SSH and GPG keys-&gt;New SSH key"></a>5.1 登录<a href="https://github.com/">Github</a>。依次点击右上角的头像-&gt;Settings-&gt;SSH and GPG keys-&gt;New SSH key</h6> <img src="/images/img/GithubBlog2/4.png" width="100%">
  
 <h6 id="5-2打开本地SSH-Key并复制到github"><a href="#5-2打开本地SSH-Key并复制到github" class="headerlink" title="5.2打开本地SSH Key并复制到github"></a>5.2打开本地SSH Key并复制到github</h6><p>使用Notepad++打开本地C:&#x2F;Users&#x2F;john&#x2F;.ssh&#x2F;id_rsa.pub文件，也就是刚才生成的SSH key。如果看不到这个文件，需要设置显示隐藏的文件。<br><img src="/images/img/GithubBlog2/5.png" width="100%"><br>将本地文件里的SSH key全选复制粘贴到刚刚GitHub上通过New SSH key创建的key方框里，Title随便写或者直接空着不写也可以，直接点击Add SHH key就好了。</p>
-<h6 id="5-3打开Git-Bash，输入ssh-T-x67-105-116-x40-103-x69-x74-x68-x75-98-x2e-99-x6f-x6d-，测试是否添加成功"><a href="#5-3打开Git-Bash，输入ssh-T-x67-105-116-x40-103-x69-x74-x68-x75-98-x2e-99-x6f-x6d-，测试是否添加成功" class="headerlink" title="5.3打开Git Bash，输入ssh -T &#x67;&#105;&#116;&#x40;&#103;&#x69;&#x74;&#x68;&#x75;&#98;&#x2e;&#99;&#x6f;&#x6d;，测试是否添加成功"></a>5.3打开Git Bash，输入ssh -T <a href="mailto:&#x67;&#105;&#116;&#x40;&#103;&#x69;&#x74;&#x68;&#x75;&#98;&#x2e;&#99;&#x6f;&#x6d;">&#x67;&#105;&#116;&#x40;&#103;&#x69;&#x74;&#x68;&#x75;&#98;&#x2e;&#99;&#x6f;&#x6d;</a>，测试是否添加成功</h6><p>出现如下提示，输入yes即可</p>
+<h6 id="5-3打开Git-Bash，输入ssh-T-x67-105-x74-x40-103-x69-116-104-x75-x62-46-99-x6f-x6d-，测试是否添加成功"><a href="#5-3打开Git-Bash，输入ssh-T-x67-105-x74-x40-103-x69-116-104-x75-x62-46-99-x6f-x6d-，测试是否添加成功" class="headerlink" title="5.3打开Git Bash，输入ssh -T &#x67;&#105;&#x74;&#x40;&#103;&#x69;&#116;&#104;&#x75;&#x62;&#46;&#99;&#x6f;&#x6d;，测试是否添加成功"></a>5.3打开Git Bash，输入ssh -T <a href="mailto:&#x67;&#105;&#x74;&#x40;&#103;&#x69;&#116;&#104;&#x75;&#x62;&#46;&#99;&#x6f;&#x6d;">&#x67;&#105;&#x74;&#x40;&#103;&#x69;&#116;&#104;&#x75;&#x62;&#46;&#99;&#x6f;&#x6d;</a>，测试是否添加成功</h6><p>出现如下提示，输入yes即可</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">The authenticity of host <span class="string">&#x27;github.com (192.30.255.113)&#x27;</span> can<span class="string">&#x27;t be established.</span></span><br><span class="line"><span class="string">RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.</span></span><br><span class="line"><span class="string">Are you sure you want to continue connecting (yes/no)?</span></span><br></pre></td></tr></table></figure>
 <p>输入yes后会提示输入密码：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Enter passphrase <span class="keyword">for</span> key <span class="string">&#x27;/c/Users/User/.ssh/id_rsa&#x27;</span>:【这里的密码也是加密串】</span><br></pre></td></tr></table></figure>
@@ -92,22 +106,21 @@
       </categories>
   </entry>
   <entry>
-    <title>GitHub博客搭建（一）</title>
-    <url>/2022/06/12/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%EF%BC%88%E4%B8%80%EF%BC%89/</url>
-    <content><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h5 id="1-GitHub账号注册"><a href="#1-GitHub账号注册" class="headerlink" title="1.GitHub账号注册"></a>1.GitHub账号注册</h5><p> <a href="https://github.com/">官网注册</a></p>
-<h5 id="2-Git安装"><a href="#2-Git安装" class="headerlink" title="2.Git安装"></a>2.Git安装</h5><p> <a href="https://git-scm.com/downloads">官网下载Git</a><br> 双击Git-2.32.0.2-64-bit.exe安装包，一路点击next即可，安装完成后鼠标右键会有Git Bash Here字样。</p>
-<h5 id="3-NodeJS安装"><a href="#3-NodeJS安装" class="headerlink" title="3.NodeJS安装"></a>3.NodeJS安装</h5><p> <a href="https://nodejs.org/zh-cn/download/">官网下载NodeJS</a>，双击安装包开始安装，一路点击Next即可。<br> <img src="/images/img/GithubBlog1/1.png"></p>
-<p> 打开cmd窗口，查看node和npm版本，下图表示正常安装完成。<br> <img src="/images/img/GithubBlog1/2.png" width="80%"></p>
-<h6 id="修改NodeJS的全局包路径"><a href="#修改NodeJS的全局包路径" class="headerlink" title="修改NodeJS的全局包路径"></a>修改NodeJS的全局包路径</h6><p> 下载全局包时，默认保存在C盘下，可通过 npm root -g 命令查看当前路径，为避免占用C盘空间，将全局包放到其他目录下。<br> 1.在安装目录下创建两个文件夹，node_global 全局包存放，node_cache node缓存<br> <img src="/images/img/GithubBlog1/3.png" width="100%"><br>打开cmd，执行如下命令</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> prefix <span class="string">&quot;E:\Blog\NodeJS\node_global&quot;</span></span><br><span class="line">npm config <span class="built_in">set</span> cache <span class="string">&quot;E:\Blog\NodeJS\node_cache&quot;</span></span><br></pre></td></tr></table></figure>
-<p>2.修改环境变量<br>将【node_global】的路径“E:\devTools\nodejs\node_global”加入到【系统变量 】下的【PATH】 变量中<br> <img src="/images/img/GithubBlog1/4.png" width="65%"><br>3.测试全局路径是否修改成功<br>输入下面的命令：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install express -g</span><br></pre></td></tr></table></figure>
-<p>或者</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install express --global</span><br></pre></td></tr></table></figure>
-<p><font color="#dd0000">注意：</font>“-g”等同于“–global”，“-g” 是全局安装，不加“-g”就是默认下载到当前目录。“-g” 表示安装到之前设置的【node_global】目录下，同时nodejs会自动地在node_global文件夹下创建【node_modules】子文件夹， 即自动下载到“E:\Blog\NodeJS\node_global\node_modules” 路径下。<br><img src="/images/img/GithubBlog1/5.png" width="100%"><br>4.第三步失败的话可以参考下方进行设置。<br><font color="#dd0000">注意：</font>需要将安装文件夹的权限设置为完全控制。<br><img src="/images/img/GithubBlog1/6.png" width="65%"><br>包括安装文件夹下的【node_cache】、【node_global】、【node_modules】这三个文件夹。<br><img src="/images/img/GithubBlog1/7.png" width="100%"></p>
+    <title>Hello World</title>
+    <url>/2022/06/11/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
   </entry>
 </search>
