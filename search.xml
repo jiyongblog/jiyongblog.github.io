@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>GitHub博客搭建（二）</title>
+    <url>/2022/06/12/GitHub%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    <content><![CDATA[<h2 id="创建仓库以及SSH配置"><a href="#创建仓库以及SSH配置" class="headerlink" title="创建仓库以及SSH配置"></a>创建仓库以及SSH配置</h2><h5 id="1-登录Github，点击Your-repositories，进入仓库页面"><a href="#1-登录Github，点击Your-repositories，进入仓库页面" class="headerlink" title="1.登录Github，点击Your repositories，进入仓库页面"></a>1.登录<a href="https://github.com/">Github</a>，点击Your repositories，进入仓库页面</h5>  <img src="/images/img/GithubBlog2/1.png" width="50%">
+  
+<h5 id="2-点击New按钮，进入仓库创建页面。"><a href="#2-点击New按钮，进入仓库创建页面。" class="headerlink" title="2.点击New按钮，进入仓库创建页面。"></a>2.点击New按钮，进入仓库创建页面。</h5>  <img src="/images/img/GithubBlog2/2.png" width="100%">
+ 
+<h5 id="3-填写仓库名，格式必须为-lt-用户名-gt-github-io，然后点击Create-repository。"><a href="#3-填写仓库名，格式必须为-lt-用户名-gt-github-io，然后点击Create-repository。" class="headerlink" title="3.填写仓库名，格式必须为&lt;用户名&gt;.github.io，然后点击Create repository。"></a>3.填写仓库名，格式必须为&lt;用户名&gt;.github.io，然后点击Create repository。</h5> <img src="/images/img/GithubBlog2/3.png" width="100%">
+ 
+<h5 id="4-使用SSH将本地git与远程的GitHub建立联系"><a href="#4-使用SSH将本地git与远程的GitHub建立联系" class="headerlink" title="4.使用SSH将本地git与远程的GitHub建立联系"></a>4.使用SSH将本地git与远程的GitHub建立联系</h5><h6 id="4-1鼠标右键，打开Git-Bush，依次输入："><a href="#4-1鼠标右键，打开Git-Bush，依次输入：" class="headerlink" title="4.1鼠标右键，打开Git Bush，依次输入："></a>4.1鼠标右键，打开Git Bush，依次输入：</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">&quot;Your Username&quot;</span></span><br><span class="line">$ git config --global user.email <span class="string">&quot;Your Email Address&quot;</span></span><br></pre></td></tr></table></figure>
+<p>Your Username和Your Email Address就是注册GitHub账号时的用户名和邮箱。因为使用仓库前，要通过Username和Email标明自己的身份。</p>
+<h6 id="4-2继续使用Git-Bush，依次输入如下两条命令："><a href="#4-2继续使用Git-Bush，依次输入如下两条命令：" class="headerlink" title="4.2继续使用Git Bush，依次输入如下两条命令："></a>4.2继续使用Git Bush，依次输入如下两条命令：</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.ssh</span><br><span class="line">$ ssh-keygen -t rsa -C <span class="string">&quot;Your Email Address&quot;</span></span><br></pre></td></tr></table></figure>
+<p><font color="#dd0000">注意：</font>在输入cd ~&#x2F;.ssh时，如果提示：No such file or directory， 说明你是第一次使用Git，没有影响。</p>
+<p>提示：cd ~&#x2F;.ssh用来检查本机的ssh密钥，ssh-keygen -t rsa -C “Your Email Address用于生成新的SSH Key。</p>
+<p>在出现如下提示后，直接回车</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/Users/your_user_directory/.ssh/id_rsa):【这里直接回车】</span><br></pre></td></tr></table></figure>
+<p>会提示输入密码：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):【输入加密串】【加密串我们看不见，所以你输密码的时候不要以为没输入进去，你直接输入就好，输完密码按回车键确定就行】</span><br><span class="line">Enter same passphrase again:【再次输入加密串】</span><br></pre></td></tr></table></figure>
+<p><font color="#dd0000">注意：</font>这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入。<br><font color="#dd0000">个人建议不输入密码</font></p>
+<p>key生成成功后，可以看到Your public key has been saved in &#x2F;C:&#x2F;Users&#x2F;john&#x2F;.ssh&#x2F;id_rsa.pub. 找到ssh key保存的位置。</p>
+<h5 id="5-添加-SSH-Key-到-GitHub"><a href="#5-添加-SSH-Key-到-GitHub" class="headerlink" title="5.添加 SSH Key 到 GitHub"></a>5.添加 SSH Key 到 GitHub</h5><h6 id="5-1-登录Github。依次点击右上角的头像-gt-Settings-gt-SSH-and-GPG-keys-gt-New-SSH-key"><a href="#5-1-登录Github。依次点击右上角的头像-gt-Settings-gt-SSH-and-GPG-keys-gt-New-SSH-key" class="headerlink" title="5.1 登录Github。依次点击右上角的头像-&gt;Settings-&gt;SSH and GPG keys-&gt;New SSH key"></a>5.1 登录<a href="https://github.com/">Github</a>。依次点击右上角的头像-&gt;Settings-&gt;SSH and GPG keys-&gt;New SSH key</h6> <img src="/images/img/GithubBlog2/4.png" width="100%">
+ 
+<h6 id="5-2打开本地SSH-Key并复制到github"><a href="#5-2打开本地SSH-Key并复制到github" class="headerlink" title="5.2打开本地SSH Key并复制到github"></a>5.2打开本地SSH Key并复制到github</h6><p>使用Notepad++打开本地C:&#x2F;Users&#x2F;john&#x2F;.ssh&#x2F;id_rsa.pub文件，也就是刚才生成的SSH key。如果看不到这个文件，需要设置显示隐藏的文件。<br><img src="/images/img/GithubBlog2/5.png" width="100%"><br>将本地文件里的SSH key全选复制粘贴到刚刚GitHub上通过New SSH key创建的key方框里，Title随便写或者直接空着不写也可以，直接点击Add SHH key就好了。</p>
+<h6 id="5-3打开Git-Bash，输入ssh-T-x67-x69-116-64-103-105-x74-104-117-x62-x2e-99-111-109-，测试是否添加成功"><a href="#5-3打开Git-Bash，输入ssh-T-x67-x69-116-64-103-105-x74-104-117-x62-x2e-99-111-109-，测试是否添加成功" class="headerlink" title="5.3打开Git Bash，输入ssh -T &#x67;&#x69;&#116;&#64;&#103;&#105;&#x74;&#104;&#117;&#x62;&#x2e;&#99;&#111;&#109;，测试是否添加成功"></a>5.3打开Git Bash，输入ssh -T <a href="mailto:&#x67;&#x69;&#116;&#64;&#103;&#105;&#x74;&#104;&#117;&#x62;&#x2e;&#99;&#111;&#109;">&#x67;&#x69;&#116;&#64;&#103;&#105;&#x74;&#104;&#117;&#x62;&#x2e;&#99;&#111;&#109;</a>，测试是否添加成功</h6><p>出现如下提示，输入yes即可</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">The authenticity of host <span class="string">&#x27;github.com (192.30.255.113)&#x27;</span> can<span class="string">&#x27;t be established.</span></span><br><span class="line"><span class="string">RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.</span></span><br><span class="line"><span class="string">Are you sure you want to continue connecting (yes/no)?</span></span><br></pre></td></tr></table></figure>
+<p>输入yes后会提示输入密码：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Enter passphrase <span class="keyword">for</span> key <span class="string">&#x27;/c/Users/User/.ssh/id_rsa&#x27;</span>:【这里的密码也是加密串】</span><br></pre></td></tr></table></figure>
+<p>当系统出现如下提示时，说明成功了</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Hi HandsomeSuperRed! You<span class="string">&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+  </entry>
+  <entry>
     <title>GitHub博客搭建（三）</title>
     <url>/2022/06/12/GitHub%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%EF%BC%88%E4%B8%89%EF%BC%89/</url>
     <content><![CDATA[<h2 id="Hexo安装及配置"><a href="#Hexo安装及配置" class="headerlink" title="Hexo安装及配置"></a>Hexo安装及配置</h2><h5 id="1-Hexo安装"><a href="#1-Hexo安装" class="headerlink" title="1.Hexo安装"></a>1.Hexo安装</h5><p>选择你的博客放置在哪个盘的哪个文件夹，在空白处单击鼠标右键，依然选择Git Bash here来打开Git命令行，并输入如下命令。<br><img src="/images/img/GithubBlog3/1.png" width="100%"></p>
@@ -17,27 +50,6 @@
 <h6 id="4-2修改根目录下的-config-yml，配置-GitHub-相关信息"><a href="#4-2修改根目录下的-config-yml，配置-GitHub-相关信息" class="headerlink" title="4.2修改根目录下的 _config.yml，配置 GitHub 相关信息"></a>4.2修改根目录下的 _config.yml，配置 GitHub 相关信息</h6><p>找到其中的deploy标签，修改成如图形式。注意将repo的用户名替换为自己的用户名<br><img src="/images/img/GithubBlog3/2.png" width="100%"></p>
 <h6 id="打开-Git-Bash进入创建的JYblog文件夹，依次输入以下命令："><a href="#打开-Git-Bash进入创建的JYblog文件夹，依次输入以下命令：" class="headerlink" title="打开 Git Bash进入创建的JYblog文件夹，依次输入以下命令："></a>打开 Git Bash进入创建的JYblog文件夹，依次输入以下命令：</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo generate</span><br><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>浏览器访问 <a href="https://jiyongblog.github.io/">https://jiyongblog.github.io/</a> 部署成功</p>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>GitHub博客搭建（四）</title>
-    <url>/2022/06/12/GitHub%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%EF%BC%88%E5%9B%9B%EF%BC%89/</url>
-    <content><![CDATA[<h2 id="Hexo-Admin插件以及Hexo主题安装"><a href="#Hexo-Admin插件以及Hexo主题安装" class="headerlink" title="Hexo Admin插件以及Hexo主题安装"></a>Hexo Admin插件以及Hexo主题安装</h2><h5 id="1-Hexo-Admin安装"><a href="#1-Hexo-Admin安装" class="headerlink" title="1.Hexo Admin安装"></a>1.Hexo Admin安装</h5><p>在你的hexo根目录下，打开git bash here输入以下代码进行安装<br><img src="/images/img/GithubBlog4/1.png" width="100%"></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install --save hexo-admin</span><br></pre></td></tr></table></figure>
-<p>浏览器输入网址:localhost:4000&#x2F;admin 查是否安装成功<br><img src="/images/img/GithubBlog4/4.png" width="100%"></p>
-<h5 id="2-Hexo主题安装"><a href="#2-Hexo主题安装" class="headerlink" title="2.Hexo主题安装"></a>2.Hexo主题安装</h5><h6 id="2-1主题选择"><a href="#2-1主题选择" class="headerlink" title="2.1主题选择"></a>2.1主题选择</h6><p>GitHub上的Hexo主题： <a href="https://github.com/hexojs/hexo/wiki/Themes">https://github.com/hexojs/hexo/wiki/Themes</a></p>
-<p>Hexo官网主题：<a href="https://hexo.io/themes/">https://hexo.io/themes/</a></p>
-<p>知乎上的主题推荐：<a href="https://www.zhihu.com/question/24422335">https://www.zhihu.com/question/24422335</a></p>
-<h6 id="2-2主题安装"><a href="#2-2主题安装" class="headerlink" title="2.2主题安装"></a>2.2主题安装</h6><p>每一种主题，一般应该都会有相关的使用说明，包括安装、个性化设置，这里以fexo为例介绍安装过程。<br>在你的hexo根目录下，打开git bash here输入以下代码进行安装</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> git@github.com:forsigner/fexo.git themes/fexo</span><br></pre></td></tr></table></figure>
-<p>如果设置了密码，系统会提示输入密码，如果没有设置密码，将直接下载。</p>
-<h6 id="2-3主题部署"><a href="#2-3主题部署" class="headerlink" title="2.3主题部署"></a>2.3主题部署</h6><p>使用Notepad++打开网站根目录的_config.yml  修改theme: fexo。<br><img src="/images/img/GithubBlog4/2.png" width="100%"><br><img src="/images/img/GithubBlog4/3.png" width="100%"></p>
-<h6 id="2-4主题验证测试"><a href="#2-4主题验证测试" class="headerlink" title="2.4主题验证测试"></a>2.4主题验证测试</h6><p>输入以下命令</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br><span class="line">hexo server </span><br></pre></td></tr></table></figure>
-<p>浏览器输入 <a href="http://localhost:4000/">http://localhost:4000/</a> 看看自己的主题是否已经应用。</p>
 ]]></content>
       <categories>
         <category>博客搭建</category>
@@ -62,34 +74,47 @@
 ]]></content>
   </entry>
   <entry>
-    <title>GitHub博客搭建（二）</title>
-    <url>/2022/06/12/GitHub%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
-    <content><![CDATA[<h2 id="创建仓库以及SSH配置"><a href="#创建仓库以及SSH配置" class="headerlink" title="创建仓库以及SSH配置"></a>创建仓库以及SSH配置</h2><h5 id="1-登录Github，点击Your-repositories，进入仓库页面"><a href="#1-登录Github，点击Your-repositories，进入仓库页面" class="headerlink" title="1.登录Github，点击Your repositories，进入仓库页面"></a>1.登录<a href="https://github.com/">Github</a>，点击Your repositories，进入仓库页面</h5>  <img src="/images/img/GithubBlog2/1.png" width="50%">
-  
-<h5 id="2-点击New按钮，进入仓库创建页面。"><a href="#2-点击New按钮，进入仓库创建页面。" class="headerlink" title="2.点击New按钮，进入仓库创建页面。"></a>2.点击New按钮，进入仓库创建页面。</h5>  <img src="/images/img/GithubBlog2/2.png" width="100%">
- 
-<h5 id="3-填写仓库名，格式必须为-lt-用户名-gt-github-io，然后点击Create-repository。"><a href="#3-填写仓库名，格式必须为-lt-用户名-gt-github-io，然后点击Create-repository。" class="headerlink" title="3.填写仓库名，格式必须为&lt;用户名&gt;.github.io，然后点击Create repository。"></a>3.填写仓库名，格式必须为&lt;用户名&gt;.github.io，然后点击Create repository。</h5> <img src="/images/img/GithubBlog2/3.png" width="100%">
- 
-<h5 id="4-使用SSH将本地git与远程的GitHub建立联系"><a href="#4-使用SSH将本地git与远程的GitHub建立联系" class="headerlink" title="4.使用SSH将本地git与远程的GitHub建立联系"></a>4.使用SSH将本地git与远程的GitHub建立联系</h5><h6 id="4-1鼠标右键，打开Git-Bush，依次输入："><a href="#4-1鼠标右键，打开Git-Bush，依次输入：" class="headerlink" title="4.1鼠标右键，打开Git Bush，依次输入："></a>4.1鼠标右键，打开Git Bush，依次输入：</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">&quot;Your Username&quot;</span></span><br><span class="line">$ git config --global user.email <span class="string">&quot;Your Email Address&quot;</span></span><br></pre></td></tr></table></figure>
-<p>Your Username和Your Email Address就是注册GitHub账号时的用户名和邮箱。因为使用仓库前，要通过Username和Email标明自己的身份。</p>
-<h6 id="4-2继续使用Git-Bush，依次输入如下两条命令："><a href="#4-2继续使用Git-Bush，依次输入如下两条命令：" class="headerlink" title="4.2继续使用Git Bush，依次输入如下两条命令："></a>4.2继续使用Git Bush，依次输入如下两条命令：</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.ssh</span><br><span class="line">$ ssh-keygen -t rsa -C <span class="string">&quot;Your Email Address&quot;</span></span><br></pre></td></tr></table></figure>
-<p><font color="#dd0000">注意：</font>在输入cd ~&#x2F;.ssh时，如果提示：No such file or directory， 说明你是第一次使用Git，没有影响。</p>
-<p>提示：cd ~&#x2F;.ssh用来检查本机的ssh密钥，ssh-keygen -t rsa -C “Your Email Address用于生成新的SSH Key。</p>
-<p>在出现如下提示后，直接回车</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/Users/your_user_directory/.ssh/id_rsa):【这里直接回车】</span><br></pre></td></tr></table></figure>
-<p>会提示输入密码：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):【输入加密串】【加密串我们看不见，所以你输密码的时候不要以为没输入进去，你直接输入就好，输完密码按回车键确定就行】</span><br><span class="line">Enter same passphrase again:【再次输入加密串】</span><br></pre></td></tr></table></figure>
-<p><font color="#dd0000">注意：</font>这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入。<br><font color="#dd0000">个人建议不输入密码</font></p>
-<p>key生成成功后，可以看到Your public key has been saved in &#x2F;C:&#x2F;Users&#x2F;john&#x2F;.ssh&#x2F;id_rsa.pub. 找到ssh key保存的位置。</p>
-<h5 id="5-添加-SSH-Key-到-GitHub"><a href="#5-添加-SSH-Key-到-GitHub" class="headerlink" title="5.添加 SSH Key 到 GitHub"></a>5.添加 SSH Key 到 GitHub</h5><h6 id="5-1-登录Github。依次点击右上角的头像-gt-Settings-gt-SSH-and-GPG-keys-gt-New-SSH-key"><a href="#5-1-登录Github。依次点击右上角的头像-gt-Settings-gt-SSH-and-GPG-keys-gt-New-SSH-key" class="headerlink" title="5.1 登录Github。依次点击右上角的头像-&gt;Settings-&gt;SSH and GPG keys-&gt;New SSH key"></a>5.1 登录<a href="https://github.com/">Github</a>。依次点击右上角的头像-&gt;Settings-&gt;SSH and GPG keys-&gt;New SSH key</h6> <img src="/images/img/GithubBlog2/4.png" width="100%">
- 
-<h6 id="5-2打开本地SSH-Key并复制到github"><a href="#5-2打开本地SSH-Key并复制到github" class="headerlink" title="5.2打开本地SSH Key并复制到github"></a>5.2打开本地SSH Key并复制到github</h6><p>使用Notepad++打开本地C:&#x2F;Users&#x2F;john&#x2F;.ssh&#x2F;id_rsa.pub文件，也就是刚才生成的SSH key。如果看不到这个文件，需要设置显示隐藏的文件。<br><img src="/images/img/GithubBlog2/5.png" width="100%"><br>将本地文件里的SSH key全选复制粘贴到刚刚GitHub上通过New SSH key创建的key方框里，Title随便写或者直接空着不写也可以，直接点击Add SHH key就好了。</p>
-<h6 id="5-3打开Git-Bash，输入ssh-T-x67-105-116-x40-103-x69-116-104-117-x62-x2e-99-111-x6d-，测试是否添加成功"><a href="#5-3打开Git-Bash，输入ssh-T-x67-105-116-x40-103-x69-116-104-117-x62-x2e-99-111-x6d-，测试是否添加成功" class="headerlink" title="5.3打开Git Bash，输入ssh -T &#x67;&#105;&#116;&#x40;&#103;&#x69;&#116;&#104;&#117;&#x62;&#x2e;&#99;&#111;&#x6d;，测试是否添加成功"></a>5.3打开Git Bash，输入ssh -T <a href="mailto:&#x67;&#105;&#116;&#x40;&#103;&#x69;&#116;&#104;&#117;&#x62;&#x2e;&#99;&#111;&#x6d;">&#x67;&#105;&#116;&#x40;&#103;&#x69;&#116;&#104;&#117;&#x62;&#x2e;&#99;&#111;&#x6d;</a>，测试是否添加成功</h6><p>出现如下提示，输入yes即可</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">The authenticity of host <span class="string">&#x27;github.com (192.30.255.113)&#x27;</span> can<span class="string">&#x27;t be established.</span></span><br><span class="line"><span class="string">RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.</span></span><br><span class="line"><span class="string">Are you sure you want to continue connecting (yes/no)?</span></span><br></pre></td></tr></table></figure>
-<p>输入yes后会提示输入密码：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Enter passphrase <span class="keyword">for</span> key <span class="string">&#x27;/c/Users/User/.ssh/id_rsa&#x27;</span>:【这里的密码也是加密串】</span><br></pre></td></tr></table></figure>
-<p>当系统出现如下提示时，说明成功了</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Hi HandsomeSuperRed! You<span class="string">&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span></span><br></pre></td></tr></table></figure>]]></content>
+    <title>GitHub博客搭建（四）</title>
+    <url>/2022/06/12/GitHub%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%EF%BC%88%E5%9B%9B%EF%BC%89/</url>
+    <content><![CDATA[<h2 id="Hexo-Admin插件以及Hexo主题安装"><a href="#Hexo-Admin插件以及Hexo主题安装" class="headerlink" title="Hexo Admin插件以及Hexo主题安装"></a>Hexo Admin插件以及Hexo主题安装</h2><h5 id="1-Hexo-Admin安装"><a href="#1-Hexo-Admin安装" class="headerlink" title="1.Hexo Admin安装"></a>1.Hexo Admin安装</h5><p>在你的hexo根目录下，打开git bash here输入以下代码进行安装<br><img src="/images/img/GithubBlog4/1.png" width="100%"></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install --save hexo-admin</span><br></pre></td></tr></table></figure>
+<p>浏览器输入网址:localhost:4000&#x2F;admin 查是否安装成功<br><img src="/images/img/GithubBlog4/4.png" width="100%"></p>
+<h5 id="2-Hexo主题安装"><a href="#2-Hexo主题安装" class="headerlink" title="2.Hexo主题安装"></a>2.Hexo主题安装</h5><h6 id="2-1主题选择"><a href="#2-1主题选择" class="headerlink" title="2.1主题选择"></a>2.1主题选择</h6><p>GitHub上的Hexo主题： <a href="https://github.com/hexojs/hexo/wiki/Themes">https://github.com/hexojs/hexo/wiki/Themes</a></p>
+<p>Hexo官网主题：<a href="https://hexo.io/themes/">https://hexo.io/themes/</a></p>
+<p>知乎上的主题推荐：<a href="https://www.zhihu.com/question/24422335">https://www.zhihu.com/question/24422335</a></p>
+<h6 id="2-2主题安装"><a href="#2-2主题安装" class="headerlink" title="2.2主题安装"></a>2.2主题安装</h6><p>每一种主题，一般应该都会有相关的使用说明，包括安装、个性化设置，这里以fexo为例介绍安装过程。<br>在你的hexo根目录下，打开git bash here输入以下代码进行安装</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> git@github.com:forsigner/fexo.git themes/fexo</span><br></pre></td></tr></table></figure>
+<p>如果设置了密码，系统会提示输入密码，如果没有设置密码，将直接下载。</p>
+<h6 id="2-3主题部署"><a href="#2-3主题部署" class="headerlink" title="2.3主题部署"></a>2.3主题部署</h6><p>使用Notepad++打开网站根目录的_config.yml  修改theme: fexo。<br><img src="/images/img/GithubBlog4/2.png" width="100%"><br><img src="/images/img/GithubBlog4/3.png" width="100%"></p>
+<h6 id="2-4主题验证测试"><a href="#2-4主题验证测试" class="headerlink" title="2.4主题验证测试"></a>2.4主题验证测试</h6><p>输入以下命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br><span class="line">hexo server </span><br></pre></td></tr></table></figure>
+<p>浏览器输入 <a href="http://localhost:4000/">http://localhost:4000/</a> 看看自己的主题是否已经应用。</p>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>博客备份</title>
+    <url>/2022/06/14/%E5%A4%87%E4%BB%BD/</url>
+    <content><![CDATA[<h3 id="一、GitHub仓库分支创建"><a href="#一、GitHub仓库分支创建" class="headerlink" title="一、GitHub仓库分支创建"></a>一、GitHub仓库分支创建</h3><h4 id="1-新建一个仓库分支（backup）"><a href="#1-新建一个仓库分支（backup）" class="headerlink" title="1.新建一个仓库分支（backup）"></a>1.新建一个仓库分支（backup）</h4><p>输入分支名称，然后点击创建。我这里是已经创建完成了。<br><img src="/images/img/blogBackup/1.png" width="70%"></p>
+<h4 id="2-将新建的仓库分支设置为默认仓库"><a href="#2-将新建的仓库分支设置为默认仓库" class="headerlink" title="2.将新建的仓库分支设置为默认仓库"></a>2.将新建的仓库分支设置为默认仓库</h4><p>点击设置切换默认分支<br><img src="/images/img/blogBackup/2.png" width="100%"><br>按图中序号选择点击即可。<br><img src="/images/img/blogBackup/3.png" width="65%"></p>
+<h3 id="二、创建一个本地分支目录"><a href="#二、创建一个本地分支目录" class="headerlink" title="二、创建一个本地分支目录"></a>二、创建一个本地分支目录</h3><p>在本地新建一个文件夹，我这里建了一个名为ceshi的空文件夹。<br><img src="/images/img/blogBackup/4.png" width="100%"></p>
+<h5 id="1-将GitHub上分支仓库backup，clone到本地。"><a href="#1-将GitHub上分支仓库backup，clone到本地。" class="headerlink" title="1.将GitHub上分支仓库backup，clone到本地。"></a>1.将GitHub上分支仓库backup，clone到本地。</h5><p>在ceshi文件夹中打开Git Bash，输入如下命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/jiyongblog/jiyongblog.github.io backup</span><br></pre></td></tr></table></figure>
+<p>运行完成后我的ceshi文件夹中多出一个backup文件夹。<br><img src="/images/img/blogBackup/5.png" width="100%"><br>上述命令中的仓库地址从github中复制。<br><img src="/images/img/blogBackup/6.png" width="100%"></p>
+<h5 id="2-将GitHub上分支仓库backup，clone到本地。"><a href="#2-将GitHub上分支仓库backup，clone到本地。" class="headerlink" title="2.将GitHub上分支仓库backup，clone到本地。"></a>2.将GitHub上分支仓库backup，clone到本地。</h5><p>进入backup文件夹，将除了.git文件夹的其他文件全部删除，并将需要备份的文件拷贝进来。<br><font color="#dd0000">注意，如果你之前克隆过theme中的主题文件，那么应该把主题文件中的.git文件夹删掉，因为git不能嵌套上传，最好是显示隐藏文件，检查一下有没有，否则上传的时候会出错，导致你的主题文件无法上传，这样你的配置在别的电脑上就用不了了。</font><br><img src="/images/img/blogBackup/7.png" width="100%"></p>
+<p>输入如下命令完成第一次提交。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git add --all</span><br><span class="line">$ git commit -m <span class="string">&quot;backup&quot;</span></span><br><span class="line">$ git push -u origin backup</span><br></pre></td></tr></table></figure>
+<p>此时在Github上已经能看到本地文件上传到了backup分支中。<br><font color="#dd0000">在第一次提交时可能会出现需要personal access token的情况</font><br>github上生成token的方法是，登录账号后，右上角头像-&gt;Settings-&gt;Developer settings-&gt;Personal access tokens-&gt;Generate new token<br><img src="/images/img/blogBackup/9.png" width="100%"><br>新建token页面中，首先设置token的名字，之后选择token的有效期和设置token的权限作用域，完成后的token只会显示一次，建议找个地方保存一下。当然，以后token忘记了，也可以新建一个去使用。<br><img src="/images/img/blogBackup/10.png" width="100%"></p>
+<h3 id="三、将博客的编写与备份合并管理"><a href="#三、将博客的编写与备份合并管理" class="headerlink" title="三、将博客的编写与备份合并管理"></a>三、将博客的编写与备份合并管理</h3><h5 id="1-将backup文件夹中的-git文件夹复制到平时编写博客的JYblog文件夹中。"><a href="#1-将backup文件夹中的-git文件夹复制到平时编写博客的JYblog文件夹中。" class="headerlink" title="1.将backup文件夹中的.git文件夹复制到平时编写博客的JYblog文件夹中。"></a>1.将backup文件夹中的.git文件夹复制到平时编写博客的JYblog文件夹中。</h5><img src="/images/img/blogBackup/8.png" width="100%">
+
+<h5 id="2-之后编写博客采用如下命令进行备份上传，至此博客的编写与备份便可以合并管理"><a href="#2-之后编写博客采用如下命令进行备份上传，至此博客的编写与备份便可以合并管理" class="headerlink" title="2.之后编写博客采用如下命令进行备份上传，至此博客的编写与备份便可以合并管理"></a>2.之后编写博客采用如下命令进行备份上传，至此博客的编写与备份便可以合并管理</h5><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ git add .</span><br><span class="line">$ git commit -m <span class="string">&quot;backup&quot;</span></span><br><span class="line">$ git push -u origin backup</span><br><span class="line">$ hexo generate</span><br><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<h3 id="四、恢复博客"><a href="#四、恢复博客" class="headerlink" title="四、恢复博客"></a>四、恢复博客</h3><h5 id="1-将github中的备份文件clone到本地"><a href="#1-将github中的备份文件clone到本地" class="headerlink" title="1.将github中的备份文件clone到本地"></a>1.将github中的备份文件clone到本地</h5><h5 id="2-在clone下来的那个文件夹里面执行"><a href="#2-在clone下来的那个文件夹里面执行" class="headerlink" title="2.在clone下来的那个文件夹里面执行"></a>2.在clone下来的那个文件夹里面执行</h5><p>搭建hexo博客</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-cli</span><br><span class="line">$ npm install</span><br><span class="line">$ npm install hexo-deployer-git</span><br></pre></td></tr></table></figure>
+<p>部署博客</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>博客搭建</category>
       </categories>
@@ -112,11 +137,6 @@
       <categories>
         <category>博客搭建</category>
       </categories>
-  </entry>
-  <entry>
-    <title>备份</title>
-    <url>/2022/06/14/%E5%A4%87%E4%BB%BD/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>常用语法</title>

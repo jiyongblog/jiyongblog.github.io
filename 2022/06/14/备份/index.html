@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>备份 |  珊瑚岛</title>
+      <title>博客备份 |  珊瑚岛</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -64,7 +64,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  备份
+  博客备份
 </h1>
  
 
@@ -73,14 +73,18 @@
      
     <div class="article-meta">
       <a href="/2022/06/14/%E5%A4%87%E4%BB%BD/" class="article-date">
-  <time datetime="2022-06-14T14:33:07.000Z" itemprop="datePublished">2022-06-14</time>
-</a>   
+  <time datetime="2022-06-14T14:33:00.000Z" itemprop="datePublished">2022-06-14</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
+  </div>
+  
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">0</span>
+            <span class="post-count">649</span>
         </span>
     </span>
 
@@ -89,20 +93,39 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">1 min</span>
+            <span class="post-count">2 min</span>
         </span>
     </span>
 </div>
  
     </div>
       
+    <div class="tocbot"></div>
+
 
 
 
   
     <div class="article-entry" itemprop="articleBody">
        
-   
+  <h3 id="一、GitHub仓库分支创建"><a href="#一、GitHub仓库分支创建" class="headerlink" title="一、GitHub仓库分支创建"></a>一、GitHub仓库分支创建</h3><h4 id="1-新建一个仓库分支（backup）"><a href="#1-新建一个仓库分支（backup）" class="headerlink" title="1.新建一个仓库分支（backup）"></a>1.新建一个仓库分支（backup）</h4><p>输入分支名称，然后点击创建。我这里是已经创建完成了。<br><img src="/images/img/blogBackup/1.png" width="70%"></p>
+<h4 id="2-将新建的仓库分支设置为默认仓库"><a href="#2-将新建的仓库分支设置为默认仓库" class="headerlink" title="2.将新建的仓库分支设置为默认仓库"></a>2.将新建的仓库分支设置为默认仓库</h4><p>点击设置切换默认分支<br><img src="/images/img/blogBackup/2.png" width="100%"><br>按图中序号选择点击即可。<br><img src="/images/img/blogBackup/3.png" width="65%"></p>
+<h3 id="二、创建一个本地分支目录"><a href="#二、创建一个本地分支目录" class="headerlink" title="二、创建一个本地分支目录"></a>二、创建一个本地分支目录</h3><p>在本地新建一个文件夹，我这里建了一个名为ceshi的空文件夹。<br><img src="/images/img/blogBackup/4.png" width="100%"></p>
+<h5 id="1-将GitHub上分支仓库backup，clone到本地。"><a href="#1-将GitHub上分支仓库backup，clone到本地。" class="headerlink" title="1.将GitHub上分支仓库backup，clone到本地。"></a>1.将GitHub上分支仓库backup，clone到本地。</h5><p>在ceshi文件夹中打开Git Bash，输入如下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/jiyongblog/jiyongblog.github.io backup</span><br></pre></td></tr></table></figure>
+<p>运行完成后我的ceshi文件夹中多出一个backup文件夹。<br><img src="/images/img/blogBackup/5.png" width="100%"><br>上述命令中的仓库地址从github中复制。<br><img src="/images/img/blogBackup/6.png" width="100%"></p>
+<h5 id="2-将GitHub上分支仓库backup，clone到本地。"><a href="#2-将GitHub上分支仓库backup，clone到本地。" class="headerlink" title="2.将GitHub上分支仓库backup，clone到本地。"></a>2.将GitHub上分支仓库backup，clone到本地。</h5><p>进入backup文件夹，将除了.git文件夹的其他文件全部删除，并将需要备份的文件拷贝进来。<br><font color="#dd0000">注意，如果你之前克隆过theme中的主题文件，那么应该把主题文件中的.git文件夹删掉，因为git不能嵌套上传，最好是显示隐藏文件，检查一下有没有，否则上传的时候会出错，导致你的主题文件无法上传，这样你的配置在别的电脑上就用不了了。</font><br><img src="/images/img/blogBackup/7.png" width="100%"></p>
+<p>输入如下命令完成第一次提交。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add --all</span><br><span class="line">$ git commit -m <span class="string">&quot;backup&quot;</span></span><br><span class="line">$ git push -u origin backup</span><br></pre></td></tr></table></figure>
+<p>此时在Github上已经能看到本地文件上传到了backup分支中。<br><font color="#dd0000">在第一次提交时可能会出现需要personal access token的情况</font><br>github上生成token的方法是，登录账号后，右上角头像-&gt;Settings-&gt;Developer settings-&gt;Personal access tokens-&gt;Generate new token<br><img src="/images/img/blogBackup/9.png" width="100%"><br>新建token页面中，首先设置token的名字，之后选择token的有效期和设置token的权限作用域，完成后的token只会显示一次，建议找个地方保存一下。当然，以后token忘记了，也可以新建一个去使用。<br><img src="/images/img/blogBackup/10.png" width="100%"></p>
+<h3 id="三、将博客的编写与备份合并管理"><a href="#三、将博客的编写与备份合并管理" class="headerlink" title="三、将博客的编写与备份合并管理"></a>三、将博客的编写与备份合并管理</h3><h5 id="1-将backup文件夹中的-git文件夹复制到平时编写博客的JYblog文件夹中。"><a href="#1-将backup文件夹中的-git文件夹复制到平时编写博客的JYblog文件夹中。" class="headerlink" title="1.将backup文件夹中的.git文件夹复制到平时编写博客的JYblog文件夹中。"></a>1.将backup文件夹中的.git文件夹复制到平时编写博客的JYblog文件夹中。</h5><img src="/images/img/blogBackup/8.png" width="100%">
+
+<h5 id="2-之后编写博客采用如下命令进行备份上传，至此博客的编写与备份便可以合并管理"><a href="#2-之后编写博客采用如下命令进行备份上传，至此博客的编写与备份便可以合并管理" class="headerlink" title="2.之后编写博客采用如下命令进行备份上传，至此博客的编写与备份便可以合并管理"></a>2.之后编写博客采用如下命令进行备份上传，至此博客的编写与备份便可以合并管理</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ git add .</span><br><span class="line">$ git commit -m <span class="string">&quot;backup&quot;</span></span><br><span class="line">$ git push -u origin backup</span><br><span class="line">$ hexo generate</span><br><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<h3 id="四、恢复博客"><a href="#四、恢复博客" class="headerlink" title="四、恢复博客"></a>四、恢复博客</h3><h5 id="1-将github中的备份文件clone到本地"><a href="#1-将github中的备份文件clone到本地" class="headerlink" title="1.将github中的备份文件clone到本地"></a>1.将github中的备份文件clone到本地</h5><h5 id="2-在clone下来的那个文件夹里面执行"><a href="#2-在clone下来的那个文件夹里面执行" class="headerlink" title="2.在clone下来的那个文件夹里面执行"></a>2.在clone下来的那个文件夹里面执行</h5><p>搭建hexo博客</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli</span><br><span class="line">$ npm install</span><br><span class="line">$ npm install hexo-deployer-git</span><br></pre></td></tr></table></figure>
+<p>部署博客</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure> 
       <!-- reward -->
       
     </div>
