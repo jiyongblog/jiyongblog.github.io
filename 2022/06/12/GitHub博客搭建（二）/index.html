@@ -128,13 +128,19 @@
 <h5 id="5-添加-SSH-Key-到-GitHub"><a href="#5-添加-SSH-Key-到-GitHub" class="headerlink" title="5.添加 SSH Key 到 GitHub"></a>5.添加 SSH Key 到 GitHub</h5><h6 id="5-1-登录Github。依次点击右上角的头像-gt-Settings-gt-SSH-and-GPG-keys-gt-New-SSH-key"><a href="#5-1-登录Github。依次点击右上角的头像-gt-Settings-gt-SSH-and-GPG-keys-gt-New-SSH-key" class="headerlink" title="5.1 登录Github。依次点击右上角的头像-&gt;Settings-&gt;SSH and GPG keys-&gt;New SSH key"></a>5.1 登录<a target="_blank" rel="noopener" href="https://github.com/">Github</a>。依次点击右上角的头像-&gt;Settings-&gt;SSH and GPG keys-&gt;New SSH key</h6> <img src="/images/img/GithubBlog2/4.png" width="100%">
  
 <h6 id="5-2打开本地SSH-Key并复制到github"><a href="#5-2打开本地SSH-Key并复制到github" class="headerlink" title="5.2打开本地SSH Key并复制到github"></a>5.2打开本地SSH Key并复制到github</h6><p>使用Notepad++打开本地C:&#x2F;Users&#x2F;john&#x2F;.ssh&#x2F;id_rsa.pub文件，也就是刚才生成的SSH key。如果看不到这个文件，需要设置显示隐藏的文件。<br><img src="/images/img/GithubBlog2/5.png" width="100%"><br>将本地文件里的SSH key全选复制粘贴到刚刚GitHub上通过New SSH key创建的key方框里，Title随便写或者直接空着不写也可以，直接点击Add SHH key就好了。</p>
-<h6 id="5-3打开Git-Bash，输入ssh-T-103-105-x74-64-103-105-x74-x68-117-x62-46-x63-111-109-，测试是否添加成功"><a href="#5-3打开Git-Bash，输入ssh-T-103-105-x74-64-103-105-x74-x68-117-x62-46-x63-111-109-，测试是否添加成功" class="headerlink" title="5.3打开Git Bash，输入ssh -T &#103;&#105;&#x74;&#64;&#103;&#105;&#x74;&#x68;&#117;&#x62;&#46;&#x63;&#111;&#109;，测试是否添加成功"></a>5.3打开Git Bash，输入ssh -T <a href="mailto:&#103;&#105;&#x74;&#64;&#103;&#105;&#x74;&#x68;&#117;&#x62;&#46;&#x63;&#111;&#109;">&#103;&#105;&#x74;&#64;&#103;&#105;&#x74;&#x68;&#117;&#x62;&#46;&#x63;&#111;&#109;</a>，测试是否添加成功</h6><p>出现如下提示，输入yes即可</p>
+<h6 id="5-3打开Git-Bash，输入ssh-T-103-x69-116-x40-x67-x69-x74-x68-x75-x62-x2e-x63-111-x6d-，测试是否添加成功"><a href="#5-3打开Git-Bash，输入ssh-T-103-x69-116-x40-x67-x69-x74-x68-x75-x62-x2e-x63-111-x6d-，测试是否添加成功" class="headerlink" title="5.3打开Git Bash，输入ssh -T &#103;&#x69;&#116;&#x40;&#x67;&#x69;&#x74;&#x68;&#x75;&#x62;&#x2e;&#x63;&#111;&#x6d;，测试是否添加成功"></a>5.3打开Git Bash，输入ssh -T <a href="mailto:&#103;&#x69;&#116;&#x40;&#x67;&#x69;&#x74;&#x68;&#x75;&#x62;&#x2e;&#x63;&#111;&#x6d;">&#103;&#x69;&#116;&#x40;&#x67;&#x69;&#x74;&#x68;&#x75;&#x62;&#x2e;&#x63;&#111;&#x6d;</a>，测试是否添加成功</h6><p>出现如下提示，输入yes即可</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host <span class="string">&#x27;github.com (192.30.255.113)&#x27;</span> can<span class="string">&#x27;t be established.</span></span><br><span class="line"><span class="string">RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.</span></span><br><span class="line"><span class="string">Are you sure you want to continue connecting (yes/no)?</span></span><br></pre></td></tr></table></figure>
 <p>输入yes后会提示输入密码：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Enter passphrase <span class="keyword">for</span> key <span class="string">&#x27;/c/Users/User/.ssh/id_rsa&#x27;</span>:【这里的密码也是加密串】</span><br></pre></td></tr></table></figure>
 <p>当系统出现如下提示时，说明成功了</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi HandsomeSuperRed! You<span class="string">&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span></span><br></pre></td></tr></table></figure> 
       <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          Donate
+        </div>
+      </div>
       
     </div>
     
@@ -322,6 +328,16 @@
   <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
   <div class="reward-box">
     
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
     
   </div>
 </div>
