@@ -1,34 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>GitHub博客搭建（二）</title>
-    <url>/2022/06/12/GitHub%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
-    <content><![CDATA[<h2 id="创建仓库以及SSH配置"><a href="#创建仓库以及SSH配置" class="headerlink" title="创建仓库以及SSH配置"></a>创建仓库以及SSH配置</h2><h5 id="1-登录Github，点击Your-repositories，进入仓库页面"><a href="#1-登录Github，点击Your-repositories，进入仓库页面" class="headerlink" title="1.登录Github，点击Your repositories，进入仓库页面"></a>1.登录<a href="https://github.com/">Github</a>，点击Your repositories，进入仓库页面</h5>  <img src="/images/img/GithubBlog2/1.png" width="50%">
-  
-<h5 id="2-点击New按钮，进入仓库创建页面。"><a href="#2-点击New按钮，进入仓库创建页面。" class="headerlink" title="2.点击New按钮，进入仓库创建页面。"></a>2.点击New按钮，进入仓库创建页面。</h5>  <img src="/images/img/GithubBlog2/2.png" width="100%">
- 
-<h5 id="3-填写仓库名，格式必须为-lt-用户名-gt-github-io，然后点击Create-repository。"><a href="#3-填写仓库名，格式必须为-lt-用户名-gt-github-io，然后点击Create-repository。" class="headerlink" title="3.填写仓库名，格式必须为&lt;用户名&gt;.github.io，然后点击Create repository。"></a>3.填写仓库名，格式必须为&lt;用户名&gt;.github.io，然后点击Create repository。</h5> <img src="/images/img/GithubBlog2/3.png" width="100%">
- 
-<h5 id="4-使用SSH将本地git与远程的GitHub建立联系"><a href="#4-使用SSH将本地git与远程的GitHub建立联系" class="headerlink" title="4.使用SSH将本地git与远程的GitHub建立联系"></a>4.使用SSH将本地git与远程的GitHub建立联系</h5><h6 id="4-1鼠标右键，打开Git-Bush，依次输入："><a href="#4-1鼠标右键，打开Git-Bush，依次输入：" class="headerlink" title="4.1鼠标右键，打开Git Bush，依次输入："></a>4.1鼠标右键，打开Git Bush，依次输入：</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">&quot;Your Username&quot;</span></span><br><span class="line">$ git config --global user.email <span class="string">&quot;Your Email Address&quot;</span></span><br></pre></td></tr></table></figure>
-<p>Your Username和Your Email Address就是注册GitHub账号时的用户名和邮箱。因为使用仓库前，要通过Username和Email标明自己的身份。</p>
-<h6 id="4-2继续使用Git-Bush，依次输入如下两条命令："><a href="#4-2继续使用Git-Bush，依次输入如下两条命令：" class="headerlink" title="4.2继续使用Git Bush，依次输入如下两条命令："></a>4.2继续使用Git Bush，依次输入如下两条命令：</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.ssh</span><br><span class="line">$ ssh-keygen -t rsa -C <span class="string">&quot;Your Email Address&quot;</span></span><br></pre></td></tr></table></figure>
-<p><font color="#dd0000">注意：</font>在输入cd ~&#x2F;.ssh时，如果提示：No such file or directory， 说明你是第一次使用Git，没有影响。</p>
-<p>提示：cd ~&#x2F;.ssh用来检查本机的ssh密钥，ssh-keygen -t rsa -C “Your Email Address用于生成新的SSH Key。</p>
-<p>在出现如下提示后，直接回车</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/Users/your_user_directory/.ssh/id_rsa):【这里直接回车】</span><br></pre></td></tr></table></figure>
-<p>会提示输入密码：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):【输入加密串】【加密串我们看不见，所以你输密码的时候不要以为没输入进去，你直接输入就好，输完密码按回车键确定就行】</span><br><span class="line">Enter same passphrase again:【再次输入加密串】</span><br></pre></td></tr></table></figure>
-<p><font color="#dd0000">注意：</font>这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入。<br><font color="#dd0000">个人建议不输入密码</font></p>
-<p>key生成成功后，可以看到Your public key has been saved in &#x2F;C:&#x2F;Users&#x2F;john&#x2F;.ssh&#x2F;id_rsa.pub. 找到ssh key保存的位置。</p>
-<h5 id="5-添加-SSH-Key-到-GitHub"><a href="#5-添加-SSH-Key-到-GitHub" class="headerlink" title="5.添加 SSH Key 到 GitHub"></a>5.添加 SSH Key 到 GitHub</h5><h6 id="5-1-登录Github。依次点击右上角的头像-gt-Settings-gt-SSH-and-GPG-keys-gt-New-SSH-key"><a href="#5-1-登录Github。依次点击右上角的头像-gt-Settings-gt-SSH-and-GPG-keys-gt-New-SSH-key" class="headerlink" title="5.1 登录Github。依次点击右上角的头像-&gt;Settings-&gt;SSH and GPG keys-&gt;New SSH key"></a>5.1 登录<a href="https://github.com/">Github</a>。依次点击右上角的头像-&gt;Settings-&gt;SSH and GPG keys-&gt;New SSH key</h6> <img src="/images/img/GithubBlog2/4.png" width="100%">
- 
-<h6 id="5-2打开本地SSH-Key并复制到github"><a href="#5-2打开本地SSH-Key并复制到github" class="headerlink" title="5.2打开本地SSH Key并复制到github"></a>5.2打开本地SSH Key并复制到github</h6><p>使用Notepad++打开本地C:&#x2F;Users&#x2F;john&#x2F;.ssh&#x2F;id_rsa.pub文件，也就是刚才生成的SSH key。如果看不到这个文件，需要设置显示隐藏的文件。<br><img src="/images/img/GithubBlog2/5.png" width="100%"><br>将本地文件里的SSH key全选复制粘贴到刚刚GitHub上通过New SSH key创建的key方框里，Title随便写或者直接空着不写也可以，直接点击Add SHH key就好了。</p>
-<h6 id="5-3打开Git-Bash，输入ssh-T-103-105-x74-64-x67-105-x74-104-x75-x62-x2e-x63-111-x6d-，测试是否添加成功"><a href="#5-3打开Git-Bash，输入ssh-T-103-105-x74-64-x67-105-x74-104-x75-x62-x2e-x63-111-x6d-，测试是否添加成功" class="headerlink" title="5.3打开Git Bash，输入ssh -T &#103;&#105;&#x74;&#64;&#x67;&#105;&#x74;&#104;&#x75;&#x62;&#x2e;&#x63;&#111;&#x6d;，测试是否添加成功"></a>5.3打开Git Bash，输入ssh -T <a href="mailto:&#103;&#105;&#x74;&#64;&#x67;&#105;&#x74;&#104;&#x75;&#x62;&#x2e;&#x63;&#111;&#x6d;">&#103;&#105;&#x74;&#64;&#x67;&#105;&#x74;&#104;&#x75;&#x62;&#x2e;&#x63;&#111;&#x6d;</a>，测试是否添加成功</h6><p>出现如下提示，输入yes即可</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">The authenticity of host <span class="string">&#x27;github.com (192.30.255.113)&#x27;</span> can<span class="string">&#x27;t be established.</span></span><br><span class="line"><span class="string">RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.</span></span><br><span class="line"><span class="string">Are you sure you want to continue connecting (yes/no)?</span></span><br></pre></td></tr></table></figure>
-<p>输入yes后会提示输入密码：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Enter passphrase <span class="keyword">for</span> key <span class="string">&#x27;/c/Users/User/.ssh/id_rsa&#x27;</span>:【这里的密码也是加密串】</span><br></pre></td></tr></table></figure>
-<p>当系统出现如下提示时，说明成功了</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Hi HandsomeSuperRed! You<span class="string">&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span></span><br></pre></td></tr></table></figure>]]></content>
+    <title>GitHub博客搭建（一）</title>
+    <url>/2022/06/12/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    <content><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h5 id="1-GitHub账号注册"><a href="#1-GitHub账号注册" class="headerlink" title="1.GitHub账号注册"></a>1.GitHub账号注册</h5><p> <a href="https://github.com/">官网注册</a></p>
+<h5 id="2-Git安装"><a href="#2-Git安装" class="headerlink" title="2.Git安装"></a>2.Git安装</h5><p> <a href="https://git-scm.com/downloads">官网下载Git</a><br> 双击Git-2.32.0.2-64-bit.exe安装包，一路点击next即可，安装完成后鼠标右键会有Git Bash Here字样。</p>
+<h5 id="3-NodeJS安装"><a href="#3-NodeJS安装" class="headerlink" title="3.NodeJS安装"></a>3.NodeJS安装</h5><p> <a href="https://nodejs.org/zh-cn/download/">官网下载NodeJS</a>，双击安装包开始安装，一路点击Next即可。<br> <img src="/images/img/GithubBlog1/1.png"></p>
+<p> 打开cmd窗口，查看node和npm版本，下图表示正常安装完成。<br> <img src="/images/img/GithubBlog1/2.png" width="80%"></p>
+<h6 id="修改NodeJS的全局包路径"><a href="#修改NodeJS的全局包路径" class="headerlink" title="修改NodeJS的全局包路径"></a>修改NodeJS的全局包路径</h6><p> 下载全局包时，默认保存在C盘下，可通过 npm root -g 命令查看当前路径，为避免占用C盘空间，将全局包放到其他目录下。<br> 1.在安装目录下创建两个文件夹，node_global 全局包存放，node_cache node缓存<br> <img src="/images/img/GithubBlog1/3.png" width="100%"><br>打开cmd，执行如下命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> prefix <span class="string">&quot;E:\Blog\NodeJS\node_global&quot;</span></span><br><span class="line">npm config <span class="built_in">set</span> cache <span class="string">&quot;E:\Blog\NodeJS\node_cache&quot;</span></span><br></pre></td></tr></table></figure>
+<p>2.修改环境变量<br>将【node_global】的路径“E:\devTools\nodejs\node_global”加入到【系统变量 】下的【PATH】 变量中<br> <img src="/images/img/GithubBlog1/4.png" width="65%"><br>3.测试全局路径是否修改成功<br>输入下面的命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install express -g</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install express --global</span><br></pre></td></tr></table></figure>
+<p><font color="#dd0000">注意：</font>“-g”等同于“–global”，“-g” 是全局安装，不加“-g”就是默认下载到当前目录。“-g” 表示安装到之前设置的【node_global】目录下，同时nodejs会自动地在node_global文件夹下创建【node_modules】子文件夹， 即自动下载到“E:\Blog\NodeJS\node_global\node_modules” 路径下。<br><img src="/images/img/GithubBlog1/5.png" width="100%"><br>4.第三步失败的话可以参考下方进行设置。<br><font color="#dd0000">注意：</font>需要将安装文件夹的权限设置为完全控制。<br><img src="/images/img/GithubBlog1/6.png" width="65%"><br>包括安装文件夹下的【node_cache】、【node_global】、【node_modules】这三个文件夹。<br><img src="/images/img/GithubBlog1/7.png" width="100%"></p>
+]]></content>
       <categories>
         <category>博客搭建</category>
       </categories>
@@ -74,20 +60,34 @@
 ]]></content>
   </entry>
   <entry>
-    <title>GitHub博客搭建（一）</title>
-    <url>/2022/06/12/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%EF%BC%88%E4%B8%80%EF%BC%89/</url>
-    <content><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h5 id="1-GitHub账号注册"><a href="#1-GitHub账号注册" class="headerlink" title="1.GitHub账号注册"></a>1.GitHub账号注册</h5><p> <a href="https://github.com/">官网注册</a></p>
-<h5 id="2-Git安装"><a href="#2-Git安装" class="headerlink" title="2.Git安装"></a>2.Git安装</h5><p> <a href="https://git-scm.com/downloads">官网下载Git</a><br> 双击Git-2.32.0.2-64-bit.exe安装包，一路点击next即可，安装完成后鼠标右键会有Git Bash Here字样。</p>
-<h5 id="3-NodeJS安装"><a href="#3-NodeJS安装" class="headerlink" title="3.NodeJS安装"></a>3.NodeJS安装</h5><p> <a href="https://nodejs.org/zh-cn/download/">官网下载NodeJS</a>，双击安装包开始安装，一路点击Next即可。<br> <img src="/images/img/GithubBlog1/1.png"></p>
-<p> 打开cmd窗口，查看node和npm版本，下图表示正常安装完成。<br> <img src="/images/img/GithubBlog1/2.png" width="80%"></p>
-<h6 id="修改NodeJS的全局包路径"><a href="#修改NodeJS的全局包路径" class="headerlink" title="修改NodeJS的全局包路径"></a>修改NodeJS的全局包路径</h6><p> 下载全局包时，默认保存在C盘下，可通过 npm root -g 命令查看当前路径，为避免占用C盘空间，将全局包放到其他目录下。<br> 1.在安装目录下创建两个文件夹，node_global 全局包存放，node_cache node缓存<br> <img src="/images/img/GithubBlog1/3.png" width="100%"><br>打开cmd，执行如下命令</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> prefix <span class="string">&quot;E:\Blog\NodeJS\node_global&quot;</span></span><br><span class="line">npm config <span class="built_in">set</span> cache <span class="string">&quot;E:\Blog\NodeJS\node_cache&quot;</span></span><br></pre></td></tr></table></figure>
-<p>2.修改环境变量<br>将【node_global】的路径“E:\devTools\nodejs\node_global”加入到【系统变量 】下的【PATH】 变量中<br> <img src="/images/img/GithubBlog1/4.png" width="65%"><br>3.测试全局路径是否修改成功<br>输入下面的命令：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install express -g</span><br></pre></td></tr></table></figure>
-<p>或者</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install express --global</span><br></pre></td></tr></table></figure>
-<p><font color="#dd0000">注意：</font>“-g”等同于“–global”，“-g” 是全局安装，不加“-g”就是默认下载到当前目录。“-g” 表示安装到之前设置的【node_global】目录下，同时nodejs会自动地在node_global文件夹下创建【node_modules】子文件夹， 即自动下载到“E:\Blog\NodeJS\node_global\node_modules” 路径下。<br><img src="/images/img/GithubBlog1/5.png" width="100%"><br>4.第三步失败的话可以参考下方进行设置。<br><font color="#dd0000">注意：</font>需要将安装文件夹的权限设置为完全控制。<br><img src="/images/img/GithubBlog1/6.png" width="65%"><br>包括安装文件夹下的【node_cache】、【node_global】、【node_modules】这三个文件夹。<br><img src="/images/img/GithubBlog1/7.png" width="100%"></p>
-]]></content>
+    <title>GitHub博客搭建（二）</title>
+    <url>/2022/06/12/GitHub%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    <content><![CDATA[<h2 id="创建仓库以及SSH配置"><a href="#创建仓库以及SSH配置" class="headerlink" title="创建仓库以及SSH配置"></a>创建仓库以及SSH配置</h2><h5 id="1-登录Github，点击Your-repositories，进入仓库页面"><a href="#1-登录Github，点击Your-repositories，进入仓库页面" class="headerlink" title="1.登录Github，点击Your repositories，进入仓库页面"></a>1.登录<a href="https://github.com/">Github</a>，点击Your repositories，进入仓库页面</h5>  <img src="/images/img/GithubBlog2/1.png" width="50%">
+  
+<h5 id="2-点击New按钮，进入仓库创建页面。"><a href="#2-点击New按钮，进入仓库创建页面。" class="headerlink" title="2.点击New按钮，进入仓库创建页面。"></a>2.点击New按钮，进入仓库创建页面。</h5>  <img src="/images/img/GithubBlog2/2.png" width="100%">
+ 
+<h5 id="3-填写仓库名，格式必须为-lt-用户名-gt-github-io，然后点击Create-repository。"><a href="#3-填写仓库名，格式必须为-lt-用户名-gt-github-io，然后点击Create-repository。" class="headerlink" title="3.填写仓库名，格式必须为&lt;用户名&gt;.github.io，然后点击Create repository。"></a>3.填写仓库名，格式必须为&lt;用户名&gt;.github.io，然后点击Create repository。</h5> <img src="/images/img/GithubBlog2/3.png" width="100%">
+ 
+<h5 id="4-使用SSH将本地git与远程的GitHub建立联系"><a href="#4-使用SSH将本地git与远程的GitHub建立联系" class="headerlink" title="4.使用SSH将本地git与远程的GitHub建立联系"></a>4.使用SSH将本地git与远程的GitHub建立联系</h5><h6 id="4-1鼠标右键，打开Git-Bush，依次输入："><a href="#4-1鼠标右键，打开Git-Bush，依次输入：" class="headerlink" title="4.1鼠标右键，打开Git Bush，依次输入："></a>4.1鼠标右键，打开Git Bush，依次输入：</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">&quot;Your Username&quot;</span></span><br><span class="line">$ git config --global user.email <span class="string">&quot;Your Email Address&quot;</span></span><br></pre></td></tr></table></figure>
+<p>Your Username和Your Email Address就是注册GitHub账号时的用户名和邮箱。因为使用仓库前，要通过Username和Email标明自己的身份。</p>
+<h6 id="4-2继续使用Git-Bush，依次输入如下两条命令："><a href="#4-2继续使用Git-Bush，依次输入如下两条命令：" class="headerlink" title="4.2继续使用Git Bush，依次输入如下两条命令："></a>4.2继续使用Git Bush，依次输入如下两条命令：</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.ssh</span><br><span class="line">$ ssh-keygen -t rsa -C <span class="string">&quot;Your Email Address&quot;</span></span><br></pre></td></tr></table></figure>
+<p><font color="#dd0000">注意：</font>在输入cd ~&#x2F;.ssh时，如果提示：No such file or directory， 说明你是第一次使用Git，没有影响。</p>
+<p>提示：cd ~&#x2F;.ssh用来检查本机的ssh密钥，ssh-keygen -t rsa -C “Your Email Address用于生成新的SSH Key。</p>
+<p>在出现如下提示后，直接回车</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/Users/your_user_directory/.ssh/id_rsa):【这里直接回车】</span><br></pre></td></tr></table></figure>
+<p>会提示输入密码：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):【输入加密串】【加密串我们看不见，所以你输密码的时候不要以为没输入进去，你直接输入就好，输完密码按回车键确定就行】</span><br><span class="line">Enter same passphrase again:【再次输入加密串】</span><br></pre></td></tr></table></figure>
+<p><font color="#dd0000">注意：</font>这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入。<br><font color="#dd0000">个人建议不输入密码</font></p>
+<p>key生成成功后，可以看到Your public key has been saved in &#x2F;C:&#x2F;Users&#x2F;john&#x2F;.ssh&#x2F;id_rsa.pub. 找到ssh key保存的位置。</p>
+<h5 id="5-添加-SSH-Key-到-GitHub"><a href="#5-添加-SSH-Key-到-GitHub" class="headerlink" title="5.添加 SSH Key 到 GitHub"></a>5.添加 SSH Key 到 GitHub</h5><h6 id="5-1-登录Github。依次点击右上角的头像-gt-Settings-gt-SSH-and-GPG-keys-gt-New-SSH-key"><a href="#5-1-登录Github。依次点击右上角的头像-gt-Settings-gt-SSH-and-GPG-keys-gt-New-SSH-key" class="headerlink" title="5.1 登录Github。依次点击右上角的头像-&gt;Settings-&gt;SSH and GPG keys-&gt;New SSH key"></a>5.1 登录<a href="https://github.com/">Github</a>。依次点击右上角的头像-&gt;Settings-&gt;SSH and GPG keys-&gt;New SSH key</h6> <img src="/images/img/GithubBlog2/4.png" width="100%">
+ 
+<h6 id="5-2打开本地SSH-Key并复制到github"><a href="#5-2打开本地SSH-Key并复制到github" class="headerlink" title="5.2打开本地SSH Key并复制到github"></a>5.2打开本地SSH Key并复制到github</h6><p>使用Notepad++打开本地C:&#x2F;Users&#x2F;john&#x2F;.ssh&#x2F;id_rsa.pub文件，也就是刚才生成的SSH key。如果看不到这个文件，需要设置显示隐藏的文件。<br><img src="/images/img/GithubBlog2/5.png" width="100%"><br>将本地文件里的SSH key全选复制粘贴到刚刚GitHub上通过New SSH key创建的key方框里，Title随便写或者直接空着不写也可以，直接点击Add SHH key就好了。</p>
+<h6 id="5-3打开Git-Bash，输入ssh-T-x67-105-x74-x40-x67-x69-x74-x68-117-98-46-x63-x6f-109-，测试是否添加成功"><a href="#5-3打开Git-Bash，输入ssh-T-x67-105-x74-x40-x67-x69-x74-x68-117-98-46-x63-x6f-109-，测试是否添加成功" class="headerlink" title="5.3打开Git Bash，输入ssh -T &#x67;&#105;&#x74;&#x40;&#x67;&#x69;&#x74;&#x68;&#117;&#98;&#46;&#x63;&#x6f;&#109;，测试是否添加成功"></a>5.3打开Git Bash，输入ssh -T <a href="mailto:&#x67;&#105;&#x74;&#x40;&#x67;&#x69;&#x74;&#x68;&#117;&#98;&#46;&#x63;&#x6f;&#109;">&#x67;&#105;&#x74;&#x40;&#x67;&#x69;&#x74;&#x68;&#117;&#98;&#46;&#x63;&#x6f;&#109;</a>，测试是否添加成功</h6><p>出现如下提示，输入yes即可</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">The authenticity of host <span class="string">&#x27;github.com (192.30.255.113)&#x27;</span> can<span class="string">&#x27;t be established.</span></span><br><span class="line"><span class="string">RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.</span></span><br><span class="line"><span class="string">Are you sure you want to continue connecting (yes/no)?</span></span><br></pre></td></tr></table></figure>
+<p>输入yes后会提示输入密码：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Enter passphrase <span class="keyword">for</span> key <span class="string">&#x27;/c/Users/User/.ssh/id_rsa&#x27;</span>:【这里的密码也是加密串】</span><br></pre></td></tr></table></figure>
+<p>当系统出现如下提示时，说明成功了</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Hi HandsomeSuperRed! You<span class="string">&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>博客搭建</category>
       </categories>
@@ -114,16 +114,6 @@
       </categories>
   </entry>
   <entry>
-    <title>常用语法</title>
-    <url>/2022/06/12/%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<h5 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h5><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">![](/images/1.png)</span><br><span class="line"></span><br><span class="line">&lt;img src=<span class="string">&quot;/images1.png&quot;</span> width = 80%&gt;</span><br></pre></td></tr></table></figure>
-
-<h5 id="字体颜色"><a href="#字体颜色" class="headerlink" title="字体颜色"></a>字体颜色</h5><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;font color=<span class="string">&quot;#dd0000&quot;</span>&gt;注意：&lt;/font&gt;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Blog编写常用语法</category>
-      </categories>
-  </entry>
-  <entry>
     <title>博客备份</title>
     <url>/2022/06/14/%E5%A4%87%E4%BB%BD/</url>
     <content><![CDATA[<h3 id="一、GitHub仓库分支创建"><a href="#一、GitHub仓库分支创建" class="headerlink" title="一、GitHub仓库分支创建"></a>一、GitHub仓库分支创建</h3><h4 id="1-新建一个仓库分支（backup）"><a href="#1-新建一个仓库分支（backup）" class="headerlink" title="1.新建一个仓库分支（backup）"></a>1.新建一个仓库分支（backup）</h4><p>输入分支名称，然后点击创建。我这里是已经创建完成了。<br><img src="/images/img/blogBackup/1.png" width="70%"></p>
@@ -146,6 +136,16 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>博客搭建</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>常用语法</title>
+    <url>/2022/06/12/%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<h5 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h5><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">![](/images/1.png)</span><br><span class="line"></span><br><span class="line">&lt;img src=<span class="string">&quot;/images1.png&quot;</span> width = 80%&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="字体颜色"><a href="#字体颜色" class="headerlink" title="字体颜色"></a>字体颜色</h5><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;font color=<span class="string">&quot;#dd0000&quot;</span>&gt;注意：&lt;/font&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Blog编写常用语法</category>
       </categories>
   </entry>
 </search>
